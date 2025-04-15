@@ -1,0 +1,58 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+    <body class="logReg">
+        <div class="regAdmin">
+            <h3>Register</h3>
+            <form id="formreg">
+                <div class="input-group mb-2">
+                    <input type="text" name="name" placeholder="enter your name" class="form-control">
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="input-group mb-2">
+                            <input type="text" name="department" placeholder="enter your department"
+                                class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-group mb-2">
+                            <input type="text" name="designation" placeholder="enter your designation"
+                                class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-group mb-2">
+                            <input type="text" name="email" placeholder="enter your email" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-group mb-2">
+                            <input type="text" name="phoneNo" placeholder="enter your phone no"
+                                class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-group mb-2">
+                            <input type="text" name="password" placeholder="create password" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-group mb-2">
+                            <input type="text" name="collegepswd" placeholder="enter college password"
+                                class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="input-group mb-2">
+                    <input type="text" name="appPassword" placeholder="Enter two step verification password"
+                        class="form-control">
+                </div>
+            
+                
+                <button type="submit" class="btn btn-primary">Register</button>
+                Already user?<a href="/admin">Login</a>
+            </form>
+        </div>
+
+        <% script="<script src='/js/admins/register.js' defer></script>" %>
+    </body>

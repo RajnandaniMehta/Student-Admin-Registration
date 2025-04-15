@@ -1,0 +1,19 @@
+<% layout("/layouts/boilerplate.ejs") %>
+<body class="logReg">
+    <div class="box">
+        <h3>Login</h3>
+        <form id="formlgn">
+            <div class="input-group mb-3">
+                <input type="email" name="studentEmail" placeholder="enter your email" class="form-control">
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" name="password" placeholder="enter your password" class="form-control">
+            </div>
+            <button class="btn btn-primary">Login</button>
+            <a href="/auth/google/student">Google</a>
+            New User?<a href="/newStudent">sign up</a>
+        </form>
+    </div>
+    
+    <% script = "<script src='/js/students/login.js'></script>" %>
+</body>

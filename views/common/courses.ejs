@@ -1,0 +1,52 @@
+<% layout("/layouts/boilerplate.ejs") %>
+  <% style="<link rel='stylesheet' href='/css/courses.css'>" %>
+
+    <body class="bodyCourses">
+      <h2>Offered courses</h2>
+
+      <% for(let i=0;i<subjects.length;i++) { %>
+        <%let subject=subjects[i]%>
+          <%if(i%4==0){%>
+            <div class="row">
+              <%}%>
+                <div class="col-3">
+                  <div class="card mb-4 courses" style="width: 18rem;">
+
+                    <div class="card-body">
+                      <h5 class="card-title">
+                        <%=subject.title%>
+                      </h5>
+                      <ul>
+                        <li>
+                          <p>Course Code :<%=subject.courseCode%>
+                          </p>
+                        </li>
+                        <li>
+                          <p>Department : <%=subject.department%>
+                          </p>
+                        </li>
+                        <li>
+                          <p>Credit : <%=subject.credit%>
+                          </p>
+                        </li>
+                        <li>
+                          <p>Category : <%=subject.category%>
+                          </p>
+                        </li>
+                        <li>
+                          <p>Slot : <%=subject.slot%>
+                          </p>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                </div>
+                <% if((i + 1) % 4===0 || i===subjects.length - 1) { %>
+            </div>
+            <% } %>
+
+       <%}%>
+
+
+    </body>

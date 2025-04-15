@@ -1,0 +1,23 @@
+<% layout("/layouts/sidebarStudent.ejs") %>
+<body data-student-id="<%= student._id %>">
+    <div class="studentHome" >
+        <h1>Welcome ! <%= student.name%></h1>
+        <p class="text-muted">Hope you're having a great semester!</p>
+        <form>
+            <div id="semesterContainer" style="display: none;">
+                <input type="text" name="semester" placeholder="Enter your semester" required>
+                <button type="submit" id="getSub" class="btn btn-primary">get subjects</button>
+            </div>    
+        </form>
+        <div id="subjectContainer" style="display: none; margin-top: 20px;">
+        </div>
+        <br> <br>
+        <form id="submitSub">
+            <button id="submitSubjects" style="display: none;" class="btn btn-primary">submit</button>
+        </form>
+        <br> <br>
+        <button type="button" onclick="floatedCourses()" class="btn btn-primary">Floated courses</button>
+    </div>
+    
+    <% script = "<script src='/js/students/home.js'></script>" %> 
+</body>

@@ -1,0 +1,97 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+    <body class="logReg">
+        <div class="reg">
+            <form id="formreg">
+                <h3>Student Details</h3>
+                <div class="row ">
+                    <div class="col-md-6">
+                        <div class="input-group mb-2">
+                            <input type="text" name="name" placeholder="enter your name" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-group mb-2">
+                            <input type="text" name="id" placeholder="enter your ID" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-group mb-2">
+                            <input type="text" name="rollno" placeholder="enter your rollno" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-group mb-2">
+                            <input type="text" name="department" placeholder="enter your department"
+                                class="form-control">
+
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-group mb-2">
+                            <input type="text" name="currSemester" placeholder="enter your currSemester"
+                                class="form-control">
+
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-group mb-2">
+                            <input type="text" name="password" placeholder="create password" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="input-group mb-2">
+                            <input type="text" name="studentNo" placeholder="enter your phone number"
+                                class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-group mb-2">
+                            <input type="text" name="studentEmail" placeholder="enter your student email"
+                                class="form-control">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="input-group mb-2">
+                    <input type="text" name="presentAddress" placeholder="enter your presentAddress"
+                        class="form-control">
+                </div>
+                <h3>Additional Details</h3>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="input-group mb-2">
+                            <input type="text" name="fatherName" placeholder="enter your father name"
+                                class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-group mb-2">
+                            <input type="text" name="parentEmail" placeholder="enter your parentEmail"
+                                class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-group mb-2">
+                            <input type="text" name="parentMobNo" placeholder="enter your parentMobNo"
+                                class="form-control">
+
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-group mb-2">
+                            <input type="text" name="permanentAddress" placeholder="permanentAddress"
+                                class="form-control">
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Register</button>
+                Already user?<a href="/student">Login</a>
+            </form>
+        </div>
+
+
+        <% script="<script src='/js/students/register.js' defer></script>" %>
+    </body>

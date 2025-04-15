@@ -1,0 +1,23 @@
+<% layout("/layouts/boilerplate.ejs") %>
+<body>
+    <% for(let i=0;i<application.length;i++) {%>
+        <%let student=application[i]%>
+        <div>
+           
+            <h3><%=student.name%></h3>
+            <ul>
+                <li><%= student.rollno%></li>
+                <li><%= student.semester%></li>
+                <li><%= student.department%></li>
+                <%for(let i=0;i<student.subjects.length;i++) {%>
+                    <%let sub=student.subjects[i]%>
+                    <ul>
+                        <li><%=sub.title%>&nbsp;&nbsp;&nbsp;&nbsp;<%=sub.courseCode%></li>
+                    </ul>
+                <%}%>
+                <li><%=student.formStatus%></li>
+            </ul>
+        </div>
+    <% }%>
+</body>
+</html>

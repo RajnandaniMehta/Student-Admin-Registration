@@ -1,0 +1,21 @@
+<% layout("/layouts/sidebarStudent.ejs") %>
+<body class="stdProfile">
+    <div id="studentProfile">
+        <h1>Hello <b><%=student.name%></b></h1>
+        <ul>
+            <li><p>ID : <%= student.id%> </p></li>
+            <li><p>Roll no : <%= student.rollno%></p></li>
+            <li><p>Current Semester : <%= student.currSemester%></p></li>
+            <li><p>Department : <%= student.department%></p></li>
+            <li><p>Email : <%= student.studentEmail%></p></li>
+            <li><p>Phone No. : <%= student.studentNo%></p></li>
+            <li><p>Present Addrerss : <%= student.presentAddress%></p></li>
+            <li><p>Father's Name : <%= student.fatherName%></p></li>
+            <li><p>Parent MobNo. : <%= student.parentMobNo%></p></li>
+            <li><p>Parent Email : <%= student.parentEmail%></p></li>
+            <li><p>Permanent Address : <%= student.permanentAddress%></p></li>
+            <!-- <a href=""><%= student.activity%></a> -->
+        </ul>
+    </div>
+    
+</body>

@@ -1,0 +1,28 @@
+<% layout("/layouts/boilerplate.ejs") %>
+<body data-admin-id="<%=admin._id%>">
+    <% for(let i=0;i<application.length;i++) {%>
+        <%let student=application[i]%>
+        <div class="student-card" data-student-id="<%=student.id%>" data-app-id="<%=student._id%>">
+           
+            <h3><%=student.name%></h3>
+            <ul>
+                <li><%= student.rollno%></li>
+                <li><%= student.semester%></li>
+                <li><%= student.department%></li>
+                <%for(let i=0;i<student.subjects.length;i++) {%>
+                    <%let sub=student.subjects[i]%>
+                    <ul>
+                        <li><%=sub.title%> <%=sub.courseCode%></li>
+                        
+                    </ul>
+                <%}%>
+                <li><%=student.formStatus%></li>
+            </ul>
+            <button class="approve-btn">Approve</button>
+            <button class="not-approve-btn">Not Approve</button>
+        </div>
+       
+
+    <% }%>
+    <% script = "<script src='/js/admins/application.js'></script>" %>
+</body>

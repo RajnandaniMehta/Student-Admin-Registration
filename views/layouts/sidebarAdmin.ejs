@@ -1,0 +1,68 @@
+<% layout("/layouts/boilerplate.ejs") %>
+    <% style="<link rel='stylesheet' href='/css/sidebarStudent.css'>" %>
+
+        <body class="studentBody">
+            <div class="sidebar-container">
+                <!-- Sidebar -->
+                <div class="sidebar">
+                    <div class="logo">
+                        <img src="/images/nit-logo.webp" alt="Logo" width="38" height="38"
+                            class="d-inline-block align-text-top">
+                        <h2>
+                            <%=admin.name%>
+                        </h2>
+                        <div class="btn1">
+                            <i class="fa fa-house fa-solid"></i>
+                        </div>
+                    </div>
+                    <ul class="nav-links">
+                        <li>
+                            <a href="/admin/<%= admin._id %>">
+                                <i class="fa fa-solid fa-house"></i> Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/admin/<%=admin._id%>/profile">
+                                <i class="fa-solid fa-user"></i> Profile
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/admin/<%=admin._id%>/registered">
+                                <i class="fa-solid fa-book"></i> Registered Student
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/admin/<%=admin._id%>/courses">
+                                <i class="fa-solid fa-building-columns"></i>Courses
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/courses/<%=admin._id%>">
+                                <i class="fa-solid fa-building-columns"></i>Department Courses
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/admin/<%=admin._id%>/subjects">
+                                <i class="fa-solid fa-book"></i> Float-Subjects
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/admin/<%=admin._id%>/application">
+                                <i class="fa-solid fa-building-columns"></i>Not approved application
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/admin/<%=admin._id%>/approvedapplication">
+                                <i class="fa-solid fa-building-columns"></i>Approved application
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <!-- Main content -->
+                <div class="main-content">
+                    <%- body %>
+                </div>
+            </div>
+        </body>

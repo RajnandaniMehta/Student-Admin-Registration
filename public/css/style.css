@@ -1,0 +1,126 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+.container{
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: 100% !important;
+}
+.navbar{
+   height:4.5rem;
+   background-color: white;
+}
+.navbar a{
+    font-size: 1.3rem;
+}
+#home{
+    position: relative ;
+    height: 100vh ;
+    background-image: url("/images/NIT.png");
+    background-size: cover;
+    background-position: center; 
+    color: rgb(241, 247, 246);
+}
+.box1{
+    position: relative;
+    top: 120px;
+    text-align: center;
+    font-size: 1.4rem;
+    padding: 20px;
+} 
+#about{
+    position: relative ;
+    height: 100vh ;
+    color:black;
+    background-color: #f9f9f9;
+}
+.box2{
+    position: relative;
+    top: 75px;
+    text-align: center;
+    font-size: 1.4rem;
+    padding: 20px;
+}
+#admin{
+    background-color: #f9f9f9;
+    height: 100vh;
+}
+.adminn{
+    border: none !important;
+    height: 250px !important;
+    width: 270px !important;
+    align-items: center !important;
+    background-color: rgba(250, 241, 215, 0.5) !important;
+}
+.card-img-top{
+    height: 120px;
+    width: 100px !important;
+    margin-top: 5px !important;
+    padding-top: 5px !important;
+}
+.card-body{
+    padding: 0 !important;
+}
+.card-body p{
+    font-size: 15px !important;
+}
+#student{
+    height: 100vh;
+}
+#boxStudent{
+    position: relative;
+    top: 90px;
+}
+.studentt{
+    background-color: rgba(250, 241, 215, 0.5) !important;
+}
+.logReg{
+    height: 100vh;
+    max-width: 100%;
+    background-image: url("/images/Nit_uttarakhandPhoto.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.box{
+    height: 300px;
+    width: 100%;
+    max-width: 400px;
+    background-color: #ffffff;
+    padding: 40px 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(121, 119, 119, 0.2);
+    position: relative;
+    top: 100px;
+    left: 500px;
+}
+.reg{
+    height: 500px;
+    width: 100%;
+    max-width: 550px;
+    background-color: #ffffff;
+    padding: 40px 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(121, 119, 119, 0.2);
+    position: relative;
+    top: 10px;
+    left: 370px;
+}
+.regAdmin{
+    height: 400px;
+    width: 100%;
+    max-width: 500px;
+    background-color: #ffffff;
+    padding: 40px 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(121, 119, 119, 0.2);
+    position: relative;
+    top: 40px;
+    left: 400px;
+}

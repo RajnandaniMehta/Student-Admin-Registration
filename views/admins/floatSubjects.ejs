@@ -1,0 +1,30 @@
+<% layout("/layouts/sidebarAdmin.ejs") %>
+<body data-admin-id="<%=admin._id%>">
+    <h1>Float subjetcs for current semester!!!</h1>
+    <form id="floatform">
+        <input type="number" name="semester" placeholder="Enter semester">
+        <input type="text" name="department" placeholder="enter department">
+        <p>
+            <a href="#" onclick="togglePreviousSubjects()">Show Previous Courses</a>
+        </p>
+        <div id="previousSubjects" style="display: none;">
+            <% subjects.forEach(subject => { %>
+                <div>
+                    <input type="checkbox" name="selectedSubjects" value="<%= subject._id %>">
+                    <label><%= subject.title %> (<%= subject.courseCode %>)</label>
+                </div>
+            <% }) %>
+        </div>
+    
+        <hr>
+        <h3>Add New Subjects</h3>
+    <div id="newSubjectsContainer"></div>
+    <button type="button" onclick="addNewSubject()">Add New Subject</button>
+
+    <br><br>
+    <button type="submit">Float Subject</button>
+    </form>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <% script = "<script src='/js/admins/floatedSubjects.js'></script>" %>
+</body>

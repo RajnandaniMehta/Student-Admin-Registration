@@ -1,0 +1,44 @@
+toastr.options = {
+    "positionClass": "toast-top-center"
+  };
+let formreg=document.getElementById("formreg");
+
+formreg.addEventListener("submit",async function(e){
+    
+    e.preventDefault();
+    const formData=new FormData(this);
+    const userData={
+        name:formData.get("name"),
+        id:formData.get("id"),
+        rollno:formData.get("rollno"),
+        currSemester:formData.get("currSemester"),
+        department:formData.get("department"),
+        password:formData.get("password"),
+        studentNo:formData.get("studentNo"),
+        studentEmail:formData.get("studentEmail"),
+        presentAddress:formData.get("presentAddress"),
+        fatherName:formData.get("fatherName"),
+        parentEmail:formData.get("parentEmail"),
+        parentMobNo:formData.get("parentMobNo"),
+        permanentAddress:formData.get("permanentAddress"),
+    };
+    try{
+        const response=await fetch("http://localhost:8000/newStudent", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(userData),
+        });
+        const data=await response.json();
+        if (response.ok) {
+            toastr.success(data.message);
+            setTimeout(() => {
+                window.location.href = data.redirect;
+            }, 2000);
+        } else {
+            toastr.error(data.message);
+        }
+    }catch(err){
+        console.log(err);
+    }
+})
+

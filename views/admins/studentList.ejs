@@ -1,0 +1,20 @@
+<% layout("/layouts/boilerplate.ejs") %>
+<body>
+    <% for(let i=0;i<studentlist.length;i++) {%>
+        <%let student=studentlist[i]%>
+        <h3><%=student.name%></h3>
+        <ul>
+            <li><%= student.id%></li>
+            <li><%= student.rollno%></li>
+            <li><%= student.currSemester%></li>
+            <li><%= student.department%></li>
+            <li><%= student.fatherName%></li>
+            <li><%= student.permanentAddress%></li>
+            <li><%= student.parentEmail%></li>
+            <li><%= student.parentMobNo%></li>
+            <li><%= student.presentAddress%></li>
+            <li><%= student.studentNo%></li>
+            <li><%= student.studentEmail%></li>
+        </ul>
+    <% }%>
+</body>

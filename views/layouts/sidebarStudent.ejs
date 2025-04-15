@@ -1,0 +1,48 @@
+<% layout("/layouts/boilerplate.ejs") %>
+    <% style="<link rel='stylesheet' href='/css/sidebarStudent.css'>" %>
+
+        <body class="studentBody">
+            <div class="sidebar-container">
+                <!-- Sidebar -->
+                <div class="sidebar">
+                    <div class="logo">
+                        <img src="/images/nit-logo.webp" alt="Logo" width="38" height="38"
+                            class="d-inline-block align-text-top">
+                        <h2>
+                            <%=student.name%>
+                        </h2>
+                        <div class="btn1">
+                            <i class="fa fa-house fa-solid"></i>
+                        </div>
+                    </div>
+                    <ul class="nav-links">
+                        <li>
+                            <a href="/student/<%= student._id %>">
+                                <i class="fa fa-solid fa-house"></i> Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/student/<%=student._id%>/profile">
+                                <i class="fa-solid fa-user"></i> Profile
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/student/<%=student._id%>/courses">
+                                <i class="fa-solid fa-book"></i> Courses
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/courses/<%=student._id%>">
+                                <i class="fa-solid fa-building-columns"></i> Dept Courses
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <!-- Main content -->
+                <div class="main-content">
+                    <%- body %>
+                </div>
+            </div>
+        </body>
