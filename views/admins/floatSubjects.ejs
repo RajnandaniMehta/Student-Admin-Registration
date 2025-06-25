@@ -1,5 +1,5 @@
 <% layout("/layouts/sidebarAdmin.ejs") %>
-<body data-admin-id="<%=admin._id%>">
+<body data-admin-id="<%=admin._id%>" style="font-family: 'Segoe UI', sans-serif; background-color: #f5f6fa;">
     <h1>Float subjetcs for current semester!!!</h1>
     <form id="floatform">
         <input type="number" name="semester" placeholder="Enter semester">
@@ -19,10 +19,10 @@
         <hr>
         <h3>Add New Subjects</h3>
     <div id="newSubjectsContainer"></div>
-    <button type="button" onclick="addNewSubject()">Add New Subject</button>
+    <button type="button" onclick="addNewSubject()" class="btn btn-primary">Add New Subject</button>
 
     <br><br>
-    <button type="submit">Float Subject</button>
+    <button type="submit" class="btn btn-primary">Float Subject</button>
     </form>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>

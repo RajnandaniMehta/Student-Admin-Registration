@@ -1,3 +1,6 @@
+toastr.options = {
+    "positionClass": "toast-top-center"
+};
 function floatedCourses() {
     const container = document.getElementById("semesterContainer");
     container.style.display = (container.style.display === "none") ? "block" : "none";
@@ -33,10 +36,12 @@ if(getSubBtn!==null){
             const data=await response.json();
             if (response.ok) {
                     const subjectsContainer = document.getElementById("subjectContainer");
+
                     if (!subjectsContainer) return toastr.error("Subject container not found!");
     
                     subjectsContainer.innerHTML = "";
                 data.subjects[0].forEach(subject => {
+                    console.log(subject);
                     const div = document.createElement("div");
                     div.classList.add("subject-box");
                     div.innerHTML = `

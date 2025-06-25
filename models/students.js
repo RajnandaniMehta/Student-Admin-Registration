@@ -1,6 +1,4 @@
 import mongoose from "mongoose";
-import {subjectSchema} from "./subjects.js";
-import {applicationSchema} from "./submittedForm.js";
 
 const studentSchema = new mongoose.Schema({
     name:{
@@ -40,8 +38,14 @@ const studentSchema = new mongoose.Schema({
     studentEmail:{ type:String,
         required:true
     },
-    subjects: [subjectSchema],
-    activity:[applicationSchema]
+    subjects: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Subject"
+      }],
+    activity:[{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Application"
+      }]
 });
 const Student=mongoose.model("Student",studentSchema);
 export default Student;

@@ -1,0 +1,38 @@
+<% layout("/layouts/boilerplate.ejs") %>
+<% style="<link rel='stylesheet' href='/css/courses.css'>" %>
+
+<body>
+    <div class="stActivity">
+        <% for(let i=0;i<activityList.length;i++) {%>
+            <%let student=activityList[i]%>
+            <%if(i%4==0){%>
+                <div class="row">
+                    <%}%>
+                    <div class="col-3">
+            <div class="card mb-4 appliSt regiStd act" style="width: 18rem;">
+                <div class="card-body student-card ">
+               
+                    <h5 class="card-title">Name : <%=student.name%></h5>
+                    <ul>
+                        <li>Roll no : <span><%= student.rollno%></span></li>
+                        <li>Semster : <span><%= student.semester%></span></li>
+                        <li>Department : <span><%= student.department%></span></li>
+                        <li>Subjects choosen are : </li>
+                        <%for(let i=0;i<student.subjects.length;i++) {%>
+                            <%let sub=student.subjects[i]%>
+                            <ul>
+                                <li><span><%=sub.title%>(<%=sub.courseCode%>)</span></li>
+                            </ul>
+                        <%}%>
+                        <li>Form Status : <span><%=student.formStatus%></span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <% if((i + 1) % 4===0 || i===activityList.length - 1) { %>
+        </div>
+        <% }%>
+        <% }%>
+    </div>
+    
+</body>

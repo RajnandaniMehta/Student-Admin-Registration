@@ -6,8 +6,9 @@
                 <!-- Sidebar -->
                 <div class="sidebar">
                     <div class="logo">
-                        <img src="/images/nit-logo.webp" alt="Logo" width="38" height="38"
-                            class="d-inline-block align-text-top">
+                        <a href="https://nituk.ac.in/" target="_blank"><img src="/images/nit-logo.webp" alt="Logo" width="38"
+                                height="38" class="d-inline-block align-text-top"></a>
+
                         <h2>
                             <%=admin.name%>
                         </h2>
@@ -17,7 +18,7 @@
                     </div>
                     <ul class="nav-links">
                         <li>
-                            <a href="/admin/<%= admin._id %>">
+                            <a href="/admin/<%=admin._id%>">
                                 <i class="fa fa-solid fa-house"></i> Home
                             </a>
                         </li>
@@ -54,6 +55,11 @@
                         <li>
                             <a href="/admin/<%=admin._id%>/approvedapplication">
                                 <i class="fa-solid fa-building-columns"></i>Approved application
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/admin/logout">
+                                <i class="fa-solid fa-building-columns"></i>logout
                             </a>
                         </li>
                     </ul>

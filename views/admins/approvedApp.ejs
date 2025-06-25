@@ -1,23 +1,34 @@
 <% layout("/layouts/boilerplate.ejs") %>
-<body>
+<% style="<link rel='stylesheet' href='/css/courses.css'>" %>
+<body class=" bodyCourses bodyApproved">
     <% for(let i=0;i<application.length;i++) {%>
         <%let student=application[i]%>
-        <div>
-           
-            <h3><%=student.name%></h3>
-            <ul>
-                <li><%= student.rollno%></li>
-                <li><%= student.semester%></li>
-                <li><%= student.department%></li>
-                <%for(let i=0;i<student.subjects.length;i++) {%>
-                    <%let sub=student.subjects[i]%>
-                    <ul>
-                        <li><%=sub.title%>&nbsp;&nbsp;&nbsp;&nbsp;<%=sub.courseCode%></li>
-                    </ul>
+        <%if(i%4==0){%>
+            <div class="row">
                 <%}%>
-                <li><%=student.formStatus%></li>
-            </ul>
+                <div class="col-3">
+        <div class="card mb-4 appliSt regiStd" style="width: 18rem;">
+            <div class="card-body student-card">
+           
+                <h5 class="card-title">Name : <%=student.name%></h5>
+                <ul>
+                    <li>Roll no : <span><%= student.rollno%></span></li>
+                    <li>Semster : <span><%= student.semester%></span></li>
+                    <li>Department : <span><%= student.department%></span></li>
+                    <li>Subjects choosen are : </li>
+                    <%for(let i=0;i<student.subjects.length;i++) {%>
+                        <%let sub=student.subjects[i]%>
+                        <ul>
+                            <li><span><%=sub.title%>(<%=sub.courseCode%>)</span></li>
+                        </ul>
+                    <%}%>
+                    <li>Form Status : <span><%=student.formStatus%></span></li>
+                </ul>
+            </div>
         </div>
+    </div>
+    <% if((i + 1) % 4===0 || i===application.length - 1) { %>
+    </div>
+    <% }%>
     <% }%>
 </body>
-</html>

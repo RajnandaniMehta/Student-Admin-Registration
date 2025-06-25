@@ -1,5 +1,46 @@
-<% layout("/layouts/sidebarAdmin.ejs") %>
+<!-- <% layout("/layouts/sidebarAdmin.ejs") %>
 <body>
     <h1>Welcome ! <%= admin.name%></h1>
     
+</body> -->
+
+<% layout("/layouts/sidebarAdmin.ejs") %>
+<% style="<link rel='stylesheet' href='/css/courses.css'>" %>
+<!-- Admin Home Page -->
+<body class="admin-home" style="font-family: 'Segoe UI', sans-serif; background-color: #f5f6fa;">
+
+    <h2 style="margin-bottom: 30px;">👋 Welcome, <%= admin.name %>!</h2>
+
+    <div class="dashboard-cards" style="display: flex; flex-wrap: wrap; gap: 20px;">
+        
+        <!-- Card 1: Float Subjects -->
+        <div class="card" style="flex: 1; min-width: 250px; background-color: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+            <h4>📚 Float Subjects</h4>
+            <p>Start floating subjects for the current semester.</p>
+            <a href="/admin/<%=admin._id%>/subjects" class="btn" style="color: white; background-color: #4CAF50; padding: 8px 16px; text-decoration: none; border-radius: 6px;">Float Now</a>
+        </div>
+
+        <!-- Card 2: View Applications -->
+        <div class="card" style="flex: 1; min-width: 250px; background-color: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+            <h4>🧑‍🎓 Student Applications</h4>
+            <p>View and manage student subject applications.</p>
+            <a href="/admin/<%=admin._id%>/application" class="btn" style="color: white; background-color: #2196F3; padding: 8px 16px; text-decoration: none; border-radius: 6px;">View Applications</a>
+        </div>
+
+        <!-- Card 3: Floated Subjects -->
+        <!-- <div class="card" style="flex: 1; min-width: 250px; background-color: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+            <h4>📄 Floated Subjects</h4>
+            <p>Check or update the list of floated subjects.</p>
+            <a href="/admin/<%=admin._id%>/floatedSubjects" class="btn" style="color: white; background-color: #FF9800; padding: 8px 16px; text-decoration: none; border-radius: 6px;">View Subjects</a>
+        </div> -->
+
+        <!-- Card 4: Notifications -->
+        <!-- <div class="card" style="flex: 1; min-width: 250px; background-color: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+            <h4>📢 Notifications</h4>
+            <p>Send messages or updates to students.</p>
+            <a href="/admin/notifications" class="btn" style="color: white; background-color: #9C27B0; padding: 8px 16px; text-decoration: none; border-radius: 6px;">Notify Students</a>
+        </div> -->
+
+    </div>
+
 </body>

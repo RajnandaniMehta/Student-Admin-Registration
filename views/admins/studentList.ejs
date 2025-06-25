@@ -1,20 +1,59 @@
 <% layout("/layouts/boilerplate.ejs") %>
-<body>
-    <% for(let i=0;i<studentlist.length;i++) {%>
-        <%let student=studentlist[i]%>
-        <h3><%=student.name%></h3>
-        <ul>
-            <li><%= student.id%></li>
-            <li><%= student.rollno%></li>
-            <li><%= student.currSemester%></li>
-            <li><%= student.department%></li>
-            <li><%= student.fatherName%></li>
-            <li><%= student.permanentAddress%></li>
-            <li><%= student.parentEmail%></li>
-            <li><%= student.parentMobNo%></li>
-            <li><%= student.presentAddress%></li>
-            <li><%= student.studentNo%></li>
-            <li><%= student.studentEmail%></li>
-        </ul>
-    <% }%>
-</body>
+<% style="<link rel='stylesheet' href='/css/courses.css'>" %>
+    <body class="bodyCourses">
+        <% for(let i=0;i<studentlist.length;i++) {%>
+            <%let student=studentlist[i]%>
+                <%if(i%4==0){%>
+                    <div class="row">
+                        <%}%>
+                            <div class="col-3 mb-3">
+                                <div class="card mb-4 regiStd" style="width: 18rem;">
+
+                                    <div class="card-body">
+                                            <h3 class="card-title">
+                                                <%=student.name%>
+                                            </h3>
+                                            <ul>
+                                                <li>ID : 
+                                                    <span> <%= student.id%></span>
+                                                </li>
+                                                <li>Roll no : 
+                                                    <span><%= student.rollno%></span>
+                                                </li>
+                                                <li>Current Sem : 
+                                                    <span><%= student.currSemester%></span>
+                                                </li>
+                                                <li>Department : 
+                                                    <span><%= student.department%></span>
+                                                </li>
+                                                <li> Father's name : 
+                                                    <span> <%= student.fatherName%></span>
+                                                </li>
+                                                <li>Permanent Add : 
+                                                    <span> <%= student.permanentAddress%></span>
+                                                </li>
+                                                <li>Parent Email : 
+                                                    <span><%= student.parentEmail%></span>
+                                                </li>
+                                                <li>Parent Mob : 
+                                                    <span><%= student.parentMobNo%></span>
+                                                </li>
+                                                <li>Present Add : 
+                                                    <span><%= student.presentAddress%></span>
+                                                </li>
+                                                <li>Student No : 
+                                                    <span><%= student.studentNo%></span>
+                                                </li>
+                                                <li>Student Email : 
+                                                    <span> <%= student.studentEmail%></span>
+                                                </li>
+                                            </ul>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <% if((i + 1) % 4===0 || i===studentlist.length - 1) { %>
+                    </div>
+                    <% }%>
+         <% } %>
+    </body>

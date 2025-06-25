@@ -1,8 +1,9 @@
 import mongoose from "mongoose";
-import { subjectSchema } from "./subjects.js";
+
 export const applicationSchema = new mongoose.Schema({
-    id:{
-        type:String
+    studentId:{
+        type:String,
+        required:true
     },
     name:{
         type:String,
@@ -20,10 +21,14 @@ export const applicationSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-    subjects: [subjectSchema],
+    subjects: [{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Subject"
+          }],
     formStatus: { type: String, default: 'Not Approved' }
 });
-applicationSchema.index({ rollno: 1, semester: 1 }, { unique: true });
+
+applicationSchema.index({ studentId: 1, semester: 1 }, { unique: true });
 
 const Application = mongoose.model("Application", applicationSchema);
 export default Application;

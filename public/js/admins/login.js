@@ -19,6 +19,7 @@ formlogin.addEventListener("submit",async function(e){
             body: JSON.stringify(userData),
         });
         const data=await response.json();
+        console.log(data);
         if (response.ok) {
             toastr.success(data.message);
             setTimeout(() => {

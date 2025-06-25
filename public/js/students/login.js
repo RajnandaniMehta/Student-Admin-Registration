@@ -18,7 +18,7 @@ formlogin.addEventListener("submit",async function(e){
             body: JSON.stringify(userData),
         });
         const data=await response.json();
-        if (response.ok) {
+        if (response.ok) {   
             toastr.success(data.message);
             setTimeout(() => {
                 window.location.href = data.redirect;

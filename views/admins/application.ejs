@@ -1,28 +1,60 @@
 <% layout("/layouts/boilerplate.ejs") %>
-<body data-admin-id="<%=admin._id%>">
-    <% for(let i=0;i<application.length;i++) {%>
-        <%let student=application[i]%>
-        <div class="student-card" data-student-id="<%=student.id%>" data-app-id="<%=student._id%>">
-           
-            <h3><%=student.name%></h3>
-            <ul>
-                <li><%= student.rollno%></li>
-                <li><%= student.semester%></li>
-                <li><%= student.department%></li>
-                <%for(let i=0;i<student.subjects.length;i++) {%>
-                    <%let sub=student.subjects[i]%>
-                    <ul>
-                        <li><%=sub.title%> <%=sub.courseCode%></li>
-                        
-                    </ul>
-                <%}%>
-                <li><%=student.formStatus%></li>
-            </ul>
-            <button class="approve-btn">Approve</button>
-            <button class="not-approve-btn">Not Approve</button>
-        </div>
-       
+    <% style="<link rel='stylesheet' href='/css/courses.css'>" %>
 
-    <% }%>
-    <% script = "<script src='/js/admins/application.js'></script>" %>
-</body>
+        <body data-admin-id="<%=admin._id%>" class="bodyApplication">
+            <% for(let i=0;i<application.length;i++) {%>
+                <%let student=application[i]%>
+                    <%if(i%4==0){%>
+                        <div class="row">
+                            <%}%>
+                                <div class="col-3">
+                                    <div class="card mb-4 appliSt regiStd" style="width: 18rem;">
+                                        <div class="card-body student-card" data-student-id="<%=student.studentId%>"
+                                            data-app-id="<%=student._id%>">
+
+                                            <h4 class="card-title">Name : <%=student.name%>
+                                            </h4>
+                                            <ul>
+                                                <li>Roll no : <span>
+                                                        <%= student.rollno%>
+                                                    </span></li>
+                                                <li>Semester : <span>
+                                                        <%= student.semester%>
+                                                    </span></li>
+                                                <li>Department : <span>
+                                                        <%= student.department%>
+                                                    </span></li>
+                                                <li>Subjects Choosen are: </li>
+                                                <%for(let i=0;i<student.subjects.length;i++) {%>
+                                                    <%let sub=student.subjects[i]%>
+                                                        <ul>
+                                                            <li>
+                                                                <span><%=sub.title%>(<%=sub.courseCode%>)</span> 
+                                                            </li>
+
+                                                        </ul>
+                                                        <%}%>
+                                                            <li>Form Status : <span>
+                                                                    <%=student.formStatus%>
+                                                                </span></li>
+                                            </ul>
+                                            <button class="approve-btn btn btn-outline-dark">Approve</button>
+                                            <button class="not-approve-btn btn btn-outline-dark"
+                                                onclick="showReason()">Not Approve</button>
+                                            <form id="reason" style="display: none;">
+                                                <label for="disMsg" class="form-label"></label>
+                                                <textarea name="disMsg" id="disMsg" class="form-control"
+                                                    style="width: auto;" cols="26" rows="5" placeholder="Write some reason for Disapproval."></textarea>
+                                                <button class="btn btn-outline-dark dis-approve-btn">submit</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <% if((i + 1) % 4===0 || i===application.length - 1) { %>
+                        </div>
+                        <% }%>
+
+
+                            <% }%>
+                                <% script="<script src='/js/admins/application.js'></script>" %>
+        </body>

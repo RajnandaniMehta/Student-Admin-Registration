@@ -5,22 +5,26 @@
     background-repeat: no-repeat;
 }
 .bodyCourses h2{
+    position: relative;
+    top: 5rem;
     text-align: center;
     font-weight: bold;
-    color:white
+    color:white;
 }
 .courses{
-    margin: 10px 10px 10px 10px;
+    position: relative;
+    top: 5rem;
+    margin: 10px;
     padding: 5px 0px 0px 5px;
     height: 245px;
     width: 100%;
     max-width: 270px;
     background-color: rgb(252, 245, 237);
     border-radius: 8px;
-    transition: all 0.2s linear;
-    
+    transition: all 0.2s linear;  
 }
 .courses:hover{
+    cursor: pointer;
     background-color: rgb(249, 234, 217);
     box-shadow: 0 0 6px rgba(2, 206, 213, 0.4);
     transform: scale(1.05);
@@ -28,4 +32,177 @@
 }
 .card-title{
     font-weight: bold;
+}
+.regiStd {
+    position: relative;
+    top: 5rem;
+    width: 100% !important;
+    height: auto;
+    margin-left: 0;
+    margin-top: 0;
+    padding: 15px;
+    background-color: rgb(244, 244, 244);
+    transition: all 0.2s linear;
+    color: rgb(27, 85, 87);
+    border-radius: 8px;
+}
+.regiStd h3{
+    text-align: center;
+}
+.regiStd ul{
+    padding-left: 18px !important;
+}
+.regiStd li{
+    list-style: none !important;
+}
+.card-body span{
+    color: rgba(27, 85, 87, 0.8);
+}
+.card-body li{
+    color: gray;
+    
+}
+.regiStd:hover{
+    cursor: pointer;
+    background-color: rgba(244, 244, 244, 0.9);
+    box-shadow: 0 0 6px rgba(2, 206, 213, 0.4);
+    transform: scale(1.025);
+}
+
+.appliSt{
+    position: relative;
+    top: 5rem;
+    height: auto !important;
+    width: auto !important;
+    padding: 12px;
+}
+
+.bodyApplication {
+    background-image: url("/images/Subjects.jpg") !important;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.bodyApplication .row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.bodyApplication .col-3 {
+    flex: 0 0 23%;
+    margin-bottom: 2rem;
+}
+
+.bodyApplication .card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.bodyApplication .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.5);
+}
+
+.bodyApplication .card-body {
+    padding: 1.5rem;
+}
+
+.bodyApplication .student-card h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    margin-left: 16px;
+}
+
+.bodyApplication .student-card ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.bodyApplication .student-card ul > li {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.bodyApplication .student-card ul > li span {
+    font-weight: 500;
+    color: #333;
+}
+
+.bodyApplication .student-card ul ul {
+    color: #555;
+    font-size: 0.9rem;
+}
+.bodyApplication .student-card ul ul li{
+    color: #555;
+    border-bottom: 1px solid gray;
+    list-style: disc !important;
+}
+.bodyApplication .approve-btn,
+.bodyApplication .not-approve-btn,
+.bodyApplication .dis-approve-btn {
+    margin-left: 0.5rem;
+    margin-right: 0.25rem;
+    font-size: 0.9rem;
+}
+.bodyApplication .dis-approve-btn{
+    color:black;
+    background-color: white;
+ }
+ 
+.bodyApplication .dis-approve-btn:hover {
+    background-color: black;
+    color: white;
+}
+
+.bodyApplication textarea#disMsg {
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    resize: vertical;
+    padding: 0.5rem;
+}
+
+@media (max-width: 992px) {
+    .bodyApplication .col-3 {
+        flex: 0 0 48%;
+    }
+}
+
+@media (max-width: 600px) {
+    .bodyApplication .col-3 {
+        flex: 0 0 100%;
+    }
+}
+
+.bodyApproved span{
+    font-weight: 500;
+}
+.bodyApproved h5{
+   margin-left: 16px;
+}
+.bodyApproved ul ul li{
+    width: auto !important;
+    border-bottom: 1px solid gray;
+    color: rgba(27,85,87,0.7);
+    list-style-type: disc !important;
+}
+
+.stActivity{
+    height: 100vh !important;
+    width: 100% !important;
+    background-image: url("/images/study.jpg") !important;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.9;
+}
+
+.act{
+    margin: 10px;
+    opacity: 2 !important;
 }

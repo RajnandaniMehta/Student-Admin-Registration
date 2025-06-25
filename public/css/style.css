@@ -13,12 +13,16 @@ html{
     max-width: 100% !important;
 }
 .navbar{
-   height:4.5rem;
-   background-color: white;
+   height:4.5rem !important;
+   background-color: white !important;
+   position: fixed !important;
+   width: 100% !important;
+   z-index: 1 !important;
 }
 .navbar a{
-    font-size: 1.3rem;
+    font-size: 1.3rem !important;
 }
+
 #home{
     position: relative ;
     height: 100vh ;
@@ -50,16 +54,17 @@ html{
 #admin{
     background-color: #f9f9f9;
     height: 100vh;
+    padding: 70px 20px;
 }
 .adminn{
     border: none !important;
-    height: 250px !important;
+    height: 230px !important;
     width: 270px !important;
     align-items: center !important;
     background-color: rgba(250, 241, 215, 0.5) !important;
 }
 .card-img-top{
-    height: 120px;
+    height: 110px;
     width: 100px !important;
     margin-top: 5px !important;
     padding-top: 5px !important;
@@ -96,9 +101,9 @@ html{
     padding: 40px 30px;
     border-radius: 10px;
     box-shadow: 0 8px 16px rgba(121, 119, 119, 0.2);
-    position: relative;
-    top: 100px;
-    left: 500px;
+    position: absolute;
+    top: 170px;
+    left: 480px;
 }
 .reg{
     height: 500px;
