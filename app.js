@@ -7,7 +7,7 @@ import Admin from "./models/admins.js";
 import Subject, { subjectSchema } from "./models/subjects.js";
 import FloatedSubject from "./models/floatedSubjects.js";
 import Application from "./models/submittedForm.js";
-import bcrypt from "bcrypt";
+import bcrypt from 'bcryptjs';
 import { config } from "dotenv";
 config();
 import sendApprovalMail, { sendDisapprovalMail } from './utils/sendEmail.js';
@@ -25,7 +25,7 @@ import cookieParser from "cookie-parser";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const app = express();
-const MONGO_URL = "mongodb://127.0.0.1:27017/CollegeWebsite";
+const MONGO_URL = process.env.ATLASDB_URL;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -44,10 +44,10 @@ main().then(() => {
     console.log(err);
 })
 async function main() {
-    await mongoose.connect(MONGO_URL);
+    await mongoose.connect(MONGO_URL,{dbName:"NIT_UTTARAKHAND"});
 }
 app.use(session({
-    secret: "secret",
+    secret: process.env.MY_SECRET,
     resave: false,
     saveUninitialized: true,
     cookie: { secure: false }
