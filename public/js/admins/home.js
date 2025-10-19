@@ -11,7 +11,7 @@ document.getElementById("formSub").addEventListener("click",async function(e){
     let studentId = document.body.getAttribute("data-student-id");
     try{
         console.log(studentId);
-        const response=await fetch(`http://localhost:8000/student/${studentId}/subjects?semester=${semester}`, {
+        const response=await fetch(`https://student-admin-registration.onrender.com/student/${studentId}/subjects?semester=${semester}`, {
             method: "GET",
             headers: { "Content-Type": "application/json" },
         });
@@ -57,7 +57,7 @@ floatform.addEventListener("submit",async function(e) {
         selectedSubjects:selectedSubjects
     };
     try{
-        const response=await fetch(`http://localhost:8000/student/${studentId}/application`, {
+        const response=await fetch(`https://student-admin-registration.onrender.com/student/${studentId}/application`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(userData),

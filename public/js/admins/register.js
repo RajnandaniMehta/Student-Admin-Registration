@@ -19,7 +19,7 @@ formreg.addEventListener("submit",async function(e){
     };
     console.log(userData);
     try{
-        const response=await fetch("http://localhost:8000/admin/new", {
+        const response=await fetch("https://student-admin-registration.onrender.com/admin/new", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(userData),

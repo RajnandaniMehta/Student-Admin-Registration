@@ -12,7 +12,7 @@ formlogin.addEventListener("submit",async function(e){
         password:formData.get("password"),
     };
     try{
-        const response=await fetch("http://localhost:8000/student", {
+        const response=await fetch("https://student-admin-registration.onrender.com/student", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(userData),
