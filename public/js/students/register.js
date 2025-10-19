@@ -23,7 +23,7 @@ formreg.addEventListener("submit",async function(e){
         permanentAddress:formData.get("permanentAddress"),
     };
     try{
-        const response=await fetch("http://localhost:8000/newStudent", {
+        const response=await fetch("http://localhost:8000/student/new", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(userData),
