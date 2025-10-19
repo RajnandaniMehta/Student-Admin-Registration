@@ -3,7 +3,6 @@ import FloatedSubject from '../models/floatedSubjects.js';
 import Subject from '../models/subjects.js';
 import Application from '../models/submittedForm.js';
 import jwt from "jsonwebtoken";
-import passport from "passport";
 import bcrypt from 'bcryptjs';
 
 const loginForm= (req, res) => {
